@@ -440,12 +440,15 @@ class OnlineScoreDataset(Dataset):
 class FeatureDataset(torch.utils.data.Dataset):
     def __init__(self, features, targets, group_array=None):
         self.features = torch.tensor(features)
+        #print("features",features)
+        #print("target:", targets)
         self.targets = torch.tensor(targets)
         self.group_array = group_array
 
     def __getitem__(self, idx):
         if self.group_array is not None:
             return self.features[idx], self.targets[idx], self.group_array[idx]
+        #print("self.features[idx]",self.features[idx])
         return self.features[idx], self.targets[idx]
 
     def __len__(self):

@@ -103,6 +103,7 @@ def get_feature_dataloader(cfg):
 
     else:
         train_labels, test_labels = get_labels(cfg['dataset'])
+        #print("train_labels,",train_labels)###
         train_score_dataset = FeatureDataset(train_features, train_labels)
         test_score_dataset = FeatureDataset(test_features, test_labels)
 
@@ -220,6 +221,7 @@ def train_model(cfg, epochs, model, train_loader, test_loader, regularizer=None,
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
+        #print("after training")
 
         # test:
         with torch.no_grad():
@@ -249,6 +251,7 @@ def train_model(cfg, epochs, model, train_loader, test_loader, regularizer=None,
             best_model = copy.deepcopy(model)
 
         if epoch % 10 == 0:
+            print(f"Epoch [{epoch}], Best accuracy: {best_acc}, Last accuracy: {acc}")
             print(f"Epoch [{epoch}], Best accuracy:", best_acc.item(), "Last accuracy:", acc.item())
 
             sys.stdout.flush()

@@ -1,0 +1,24 @@
+# important features for the pictures
+dataset: fungi_small
+attributes: fungi_small
+cluster_feature_method: linear # [kmeans, random, linear]
+model_type: clip
+model_size: ViT-B/32
+mahalanobis: True
+division_power: 2
+linear_epochs: 132
+reinit: true # True/False
+num_attributes: 32 # [16, 32, 64, 128, 256, 512]
+seed: 0
+
+# optimization parameters
+lr: 0.001
+batch_size: 4
+epochs: 1050
+
+# model structure
+linear_model: [linear, linear] 
+score_model: [linear]
+
+json_file: "/export/home/ra79nod/proj/LM4CV/data/fungi_small/split_zhou_FungiSmall.json"
+ROOT: "/export/group/datasets/microbiology/images_png"

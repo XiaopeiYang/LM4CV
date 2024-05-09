@@ -84,6 +84,7 @@ def cluster(cfg):
             model = get_model(cfg, cfg['linear_model'], input_dim=attribute_embeddings.shape[-1], output_dim=get_output_dim(cfg['dataset']))
             train_loader, test_loader = get_feature_dataloader(cfg)
             if cfg['mahalanobis']:
+                print("mahalanobis:")
                 best_model, best_acc = train_model(cfg, cfg['linear_epochs'], model, train_loader, test_loader, regularizer='mahalanobis', configs=configs)
             else:
                 if cfg.get("cosine", False):
@@ -119,6 +120,7 @@ def cluster(cfg):
         selected_idxes = np.array(selected_idxes)
 
     if cfg['cluster_feature_method'] == 'linear':
+        print("selected_attributions:",[attributes[i] for i in selected_idxes])
         return best_acc, best_model, [attributes[i] for i in selected_idxes], torch.tensor(attribute_embeddings[selected_idxes])
     else:
         return [attributes[i] for i in selected_idxes], torch.tensor(attribute_embeddings[selected_idxes])

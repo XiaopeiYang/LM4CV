@@ -22,9 +22,26 @@ from dataset import ScoreDataset, ImagenetA
 import sklearn
 from sentence_transformers import SentenceTransformer
 from torch.utils.data import DataLoader
+from fungi_small import read_split_data, FungiSmall
+import yaml
 
 
 import clip
+
+def parse_config():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--config",
+                        default='./configs/fungi_small.yaml',
+                        help='configurations for training')
+    parser.add_argument("--outdir", default='./outputs',
+                        help='where to put all the results')
+    return parser.parse_args()
+args = parse_config()
+with open(f'{args.config}', "r") as stream:
+    try:
+        cfg = yaml.safe_load(stream)
+    except yaml.YAMLError as exc:
+        print(exc)
 
 def clean_label(true_labels):
     true_labels = np.array(true_labels)
@@ -71,6 +88,7 @@ def get_labels(dataset):
             true_labels = [eval(line.split(" ")[1]) for line in file.read().strip().split("\n")]
         file.close()
         true_labels = clean_label(true_labels)
+        print("TRUE LABELS:", true_labels)
 
         train_labels, test_labels = true_labels[:-1020], true_labels[-1020:]
 
@@ -150,6 +168,29 @@ def get_labels(dataset):
         assert len(true_labels) == 3680 + 3669
 
         train_labels, test_labels = true_labels[:3680], true_labels[-3669:]
+
+    elif dataset == 'fungi_small':
+        json_file =cfg['json_file']
+        ROOT = cfg['ROOT']
+        train_paths,train_labels, test_paths,test_labels = read_split_data(json_file, ROOT)
+        use_patches=True
+        n_crops_per_image =7
+        if use_patches:
+        # If using patches, generate multiple labels for each image
+        # Assume that the number of tags corresponding to each image is equal to the number of segments
+            expanded_train_labels = []
+            expanded_test_labels = []
+
+            for label in train_labels:
+                expanded_train_labels.extend([label] * n_crops_per_image)
+        
+            for label in test_labels:
+                expanded_test_labels.extend([label] * n_crops_per_image)
+
+            train_labels = expanded_train_labels
+            #print("train_labels",train_labels)
+            test_labels = expanded_test_labels
+
 
     else:
         raise NotImplementedError
@@ -235,6 +276,17 @@ def get_image_dataloader(dataset, preprocess, preprocess_eval=None, shuffle=Fals
 
         train_loader = torch.utils.data.DataLoader(trainset, batch_size=512, shuffle=False)
         test_loader = torch.utils.data.DataLoader(testset, batch_size=512, shuffle=False)
+    elif dataset == 'fungi_small':
+        json_file = cfg['json_file']
+        ROOT = cfg['ROOT']
+        train_paths,train_labels, test_paths,test_labels = read_split_data(json_file, ROOT)
+        print(f"{len(train_paths)} images for training.")
+        print(f"{len(test_paths)} images for testing.")
+        trainset = FungiSmall(images_path=train_paths, images_class=train_labels, transform=preprocess)
+        testset = FungiSmall(images_path=test_paths, images_class=test_labels, transform=preprocess)
+
+        train_loader = torch.utils.data.DataLoader(trainset, batch_size=4, shuffle=False)
+        test_loader = torch.utils.data.DataLoader(testset, batch_size=4, shuffle=False)
 
 
     else:
@@ -268,6 +320,8 @@ def get_folder_name(dataset):
         return "oxford-iiit-pet"
     elif dataset == "waterbirds":
         return 'waterbird_complete95_forest2water2'
+    elif dataset == "fungi_small":
+        return "fungi_small"
     else:
         raise NotImplementedError
 
@@ -322,6 +376,10 @@ def get_attributes(cfg):
 
     elif cfg['attributes'] == 'oxford_pets':
         return open("./data/oxford-iiit-pet/oxford_pets_attributes.txt", 'r').read().strip().split("\n")
+    
+    elif cfg['attributes'] == 'fungi_small':
+        return open("./data/fungi_small/fungi_small_attributes.txt", 'r').read().strip().split("\n")
+
 
     else:
         raise NotImplementedError
@@ -353,5 +411,7 @@ def get_prefix(cfg):
         return "A photo of an object with "
     elif cfg['dataset'] in ['imagenet-animal', 'imagenet-a']:
         return "A photo of an animal with "
+    elif cfg['dataset'] == 'fungi_small':
+        return "A photo of a fungi with "
     else:
         raise NotImplementedError

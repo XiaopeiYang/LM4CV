@@ -1,0 +1,80 @@
+{
+    "Carbendazim": [
+        "thin, rod-shaped bacteria",
+        "gram-positive, stain dark blue",
+        "cell walls thin, transparent",
+        "no distinctive features",
+        "appear as single cells or pairs",
+        "size: 0.5-1.5 μm in length",
+        "no visible flagella or appendages",
+        "appear as small, dark spots",
+        "no visible budding or fragmentation",
+        "no distinctive staining patterns",
+        "appear as uniform, dark-stained colonies"
+    ],
+    "Caspofungin": [
+        "thin, rod-shaped yeast cells",
+        "large, oval-shaped yeast cells",
+        "branching, filamentous structures",
+        "clumped, round yeast cells",
+        "irregularly shaped, budding yeast cells",
+        "thick, irregularly shaped yeast cells",
+        "small, round yeast cells with dark centers",
+        "large, irregularly shaped yeast cells with dark edges",
+        "thin, branching filaments",
+        "clumped, round yeast cells with dark centers",
+        "irregularly shaped, budding yeast cells with dark edges"
+    ],
+    "GWT1": [
+        "small, round cells with smooth edges",
+        "cell membranes are thin and continuous",
+        "cell contents are homogeneous",
+        "no visible organelles or structures",
+        "cells are tightly packed together",
+        "no significant variation in size",
+        "no visible staining or pigmentation",
+        "cells have a uniform shape",
+        "no visible budding or division",
+        "no significant differences in cell shape",
+        "cells are compact and tightly packed"
+    ],
+    "GermTube": [
+        "small, round or oval-shaped organisms",
+        "smooth, translucent surface",
+        "no visible structures or features",
+        "appear as tiny dots or specks",
+        "uniform in size and shape",
+        "no visible movement or activity",
+        "lack of defined boundaries",
+        "appear as a cloudy or hazy mass",
+        "no distinct patterns or textures",
+        "show little to no contrast",
+        "appear as a uniform, featureless background"
+    ],
+    "Mycelium": [
+        "thread-like structures with irregular shapes",
+        "fibrous networks with branching patterns",
+        "clumped masses with irregular borders",
+        "thin, delicate filaments with nodes",
+        "web-like structures with interconnected nodes",
+        "branching, tree-like structures with thickened tips",
+        "irregular, amorphous shapes with no clear structure",
+        "thick, dense networks with numerous nodes",
+        "fine, delicate threads with intricate branching",
+        "swirling patterns of thin, wispy filaments",
+        "randomly arranged, chaotic clusters of filaments"
+    ],
+    "Tebuconazole": [
+        "crystalline structures with irregular shapes",
+        "needle-like crystals with sharp edges",
+        "irregularly shaped crystals with smooth surfaces",
+        "thin, flat plates with smooth edges",
+        "needle-like crystals with curved surfaces",
+        "irregularly shaped crystals with rough surfaces",
+        "thick, flat plates with irregular edges",
+        "needle-like crystals with pointed tips",
+        "irregularly shaped crystals with smooth, rounded edges",
+        "thin, flat plates with irregularly shaped crystals",
+        "needle-like crystals with irregularly shaped tips"
+    ]
+}

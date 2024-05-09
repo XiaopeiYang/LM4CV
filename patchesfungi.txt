@@ -1,0 +1,25 @@
+{'dataset': 'fungi_small', 'attributes': 'fungi_small', 'cluster_feature_method': 'linear', 'model_type': 'clip', 'model_size': 'ViT-B/32', 'mahalanobis': True, 'division_power': 2, 'linear_epochs': 105, 'reinit': True, 'num_attributes': 32, 'seed': 0, 'lr': 0.001, 'batch_size': 4, 'epochs': 105, 'linear_model': ['linear', 'linear'], 'score_model': ['linear']}
+num_attributes:  32
+480 images for training.
+60 images for testing.
+mahalanobis:
+Epoch [0], Best accuracy: 49.52381134033203, Last accuracy: 49.52381134033203
+Epoch [0], Best accuracy: 49.52381134033203 Last accuracy: 49.52381134033203
+Epoch [10], Best accuracy: 66.9047622680664, Last accuracy: 61.66666793823242
+Epoch [10], Best accuracy: 66.9047622680664 Last accuracy: 61.66666793823242
+Epoch [20], Best accuracy: 66.9047622680664, Last accuracy: 55.23809814453125
+Epoch [20], Best accuracy: 66.9047622680664 Last accuracy: 55.23809814453125
+selected_attributions: ['lack of defined boundaries', 'appear as a cloudy or hazy mass', 'mycelium growth, branching structures, no compound effect', 'cell membranes are thin and continuous', 'no visible flagella or appendages', 'uniform in size and shape', 'extremely short to non-existent, no branching events, straight', 'fine, delicate threads with intricate branching', 'swelling spores of different shapes, from round to ovoidal, irregular distribution of germination tubes', 'thin, delicate filaments with nodes', 'short, can have more than one branching event, can be either straight or curly', 'tubes look like a line of pebbles along a necklace, short, thicker than usual', 'curly germination phenotype, chaotic germination tube growth', 'randomly arranged, chaotic clusters of filaments', 'small, round yeast cells with dark centers', 'appear as uniform, dark-stained colonies', 'several tubes per spore, tubes distribution and growth is chaotic, tubes tend to create agglomerates around the spore', 'thick, dense networks with numerous nodes', 'swelling, round, larger than usual', 'size: 0.5-1.5 μm in length', 'swirling patterns of thin, wispy filaments', 'rather isolated, with a clear tendency to form clusters', 'needle-like crystals with irregularly shaped tips', 'clumped, round yeast cells with dark centers', 'irregularly shaped, budding yeast cells', 'clumped, round yeast cells', 'crystalline structures with irregular shapes', 'branching, tree-like structures with thickened tips', 'round, large', 'needle-like crystals with curved surfaces', 'thin, rod-shaped bacteria', 'branching, filamentous structures']
+/export/home/ra79nod/proj/LM4CV/cluster.py:124: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  return best_acc, best_model, [attributes[i] for i in selected_idxes], torch.tensor(attribute_embeddings[selected_idxes])
+480 images for training.
+60 images for testing.
+cfg['reinit']  and cfg['num_attributes'] != 'full'
+Epoch [0], Best accuracy: 24.5238094329834, Last accuracy: 24.5238094329834
+Epoch [0], Best accuracy: 24.5238094329834 Last accuracy: 24.5238094329834
+Epoch [10], Best accuracy: 48.33333206176758, Last accuracy: 48.33333206176758
+Epoch [10], Best accuracy: 48.33333206176758 Last accuracy: 48.33333206176758
+Epoch [20], Best accuracy: 56.42856979370117, Last accuracy: 52.142860412597656
+Epoch [20], Best accuracy: 56.42856979370117 Last accuracy: 52.142860412597656
+Epoch [30], Best accuracy: 56.42856979370117, Last accuracy: 43.33333206176758
+Epoch [30], Best accuracy: 56.42856979370117 Last accuracy: 43.33333206176758
