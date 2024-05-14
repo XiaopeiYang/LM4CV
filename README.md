@@ -6,6 +6,7 @@ This is the official implementation of our ICCV paper **Learning Concise and Des
 + torchvision == 0.15.2
 
 ## Datasets
++ fungismall: run `python main.py`
 + CUB: Download the dataset from [here](https://www.kaggle.com/datasets/wenewone/cub2002011). The downloaded files are organized as below. 
 + Stanford_Cars: Download the dataset from [here](https://www.kaggle.com/datasets/jessicali9530/stanford-cars-dataset). The downloaded files are organized as below. 
 + CIFAR10: run the code `python main.py --config configs/cifar10.yaml` then the dataset will be automatically downloaded into the folder `./data/cifar-10-batches-py`. 

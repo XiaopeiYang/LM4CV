@@ -1,0 +1,37 @@
+{'dataset': 'fungi_small', 'attributes': 'fungi_small', 'cluster_feature_method': 'linear', 'model_type': 'clip', 'model_size': 'ViT-B/32', 'mahalanobis': True, 'division_power': 2, 'linear_epochs': 132, 'reinit': True, 'num_attributes': 32, 'seed': 0, 'lr': 0.001, 'batch_size': 4, 'epochs': 1050, 'linear_model': ['linear', 'linear'], 'score_model': ['linear'], 'json_file': '/export/home/ra79nod/proj/LM4CV/data/fungi_small/split_zhou_FungiSmall.json', 'ROOT': '/export/group/datasets/microbiology/images_png'}
+num_attributes:  32
+600 images for training.
+600 images for testing.
+Extract and pre-save image features...
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1050/1050 [00:25<00:00, 41.80it/s]
+Extract and pre-save image features...
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1050/1050 [00:24<00:00, 43.31it/s]
+mahalanobis:
+Epoch [0], Best accuracy: 52.404762268066406, Last accuracy: 52.404762268066406
+Epoch [0], Best accuracy: 52.404762268066406 Last accuracy: 52.404762268066406
+Epoch [10], Best accuracy: 62.92856979370117, Last accuracy: 62.92856979370117
+Epoch [10], Best accuracy: 62.92856979370117 Last accuracy: 62.92856979370117
+Epoch [20], Best accuracy: 64.42857360839844, Last accuracy: 56.69047927856445
+Epoch [20], Best accuracy: 64.42857360839844 Last accuracy: 56.69047927856445
+Epoch [30], Best accuracy: 64.42857360839844, Last accuracy: 61.14285659790039
+Epoch [30], Best accuracy: 64.42857360839844 Last accuracy: 61.14285659790039
+selected_attributions: ['lack of defined boundaries', 'thin, rod-shaped bacteria', 'mycelium growth, branching structures, no compound effect', 'cell membranes are thin and continuous', 'no visible flagella or appendages', 'uniform in size and shape', 'extremely short to non-existent, no branching events, straight', 'fine, delicate threads with intricate branching', 'swelling spores of different shapes, from round to ovoidal, irregular distribution of germination tubes', 'thin, delicate filaments with nodes', 'short, can have more than one branching event, can be either straight or curly', 'tubes look like a line of pebbles along a necklace, short, thicker than usual', 'curly germination phenotype, chaotic germination tube growth', 'randomly arranged, chaotic clusters of filaments', 'irregularly shaped, budding yeast cells', 'clumped masses with irregular borders', 'several tubes per spore, tubes distribution and growth is chaotic, tubes tend to create agglomerates around the spore', 'thick, dense networks with numerous nodes', 'swelling, round, larger than usual', 'size: 0.5-1.5 μm in length', 'thread-like structures with irregular shapes', 'only spores, no germ tube growth', 'appear as a cloudy or hazy mass', 'clumped, round yeast cells with dark centers', 'rather isolated, with a clear tendency to form clusters', 'clumped, round yeast cells', 'crystalline structures with irregular shapes', 'branching, tree-like structures with thickened tips', 'round, large', 'needle-like crystals with curved surfaces', 'round, smaller than usual, often hidden by tubes', 'branching, filamentous structures']
+/export/home/ra79nod/proj/LM4CV/cluster.py:124: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  return best_acc, best_model, [attributes[i] for i in selected_idxes], torch.tensor(attribute_embeddings[selected_idxes])
+cfg['reinit']  and cfg['num_attributes'] != 'full'
+600 images for training.
+600 images for testing.
+Epoch [0], Best accuracy: 34.69047546386719, Last accuracy: 34.69047546386719
+Epoch [0], Best accuracy: 34.69047546386719 Last accuracy: 34.69047546386719
+Epoch [10], Best accuracy: 50.5476188659668, Last accuracy: 44.9523811340332
+Epoch [10], Best accuracy: 50.5476188659668 Last accuracy: 44.9523811340332
+Epoch [20], Best accuracy: 50.619049072265625, Last accuracy: 39.14285659790039
+Epoch [20], Best accuracy: 50.619049072265625 Last accuracy: 39.14285659790039
+Epoch [30], Best accuracy: 51.33333206176758, Last accuracy: 46.4523811340332
+Epoch [30], Best accuracy: 51.33333206176758 Last accuracy: 46.4523811340332
+Epoch [40], Best accuracy: 57.9523811340332, Last accuracy: 52.21428298950195
+Epoch [40], Best accuracy: 57.9523811340332 Last accuracy: 52.21428298950195
+Epoch [50], Best accuracy: 59.04762268066406, Last accuracy: 50.52381134033203
+Epoch [50], Best accuracy: 59.04762268066406 Last accuracy: 50.52381134033203
+Epoch [60], Best accuracy: 59.04762268066406, Last accuracy: 50.80952453613281
+Epoch [60], Best accuracy: 59.04762268066406 Last accuracy: 50.80952453613281

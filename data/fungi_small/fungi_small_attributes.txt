@@ -1,0 +1,137 @@
+small, round cells with smooth edges
+small, round or oval-shaped organisms
+irregularly shaped, budding yeast cells
+appear as single cells or pairs
+small, round yeast cells with dark centers
+appear as a uniform, featureless background
+irregular, amorphous shapes with no clear structure
+branching, filamentous structures
+cell contents are homogeneous
+no visible flagella or appendages
+irregularly shaped crystals with smooth surfaces
+cell walls thin, transparent
+no significant differences in cell shape
+needle-like crystals with sharp edges
+thin, branching filaments
+needle-like crystals with irregularly shaped tips
+cells have a uniform shape
+cells are compact and tightly packed
+show little to no contrast
+irregularly shaped, budding yeast cells with dark edges
+large, irregularly shaped yeast cells with dark edges
+no visible staining or pigmentation
+appear as tiny dots or specks
+no distinctive features
+no visible structures or features
+clumped masses with irregular borders
+no distinctive staining patterns
+appear as small, dark spots
+appear as a cloudy or hazy mass
+clumped, round yeast cells
+swirling patterns of thin, wispy filaments
+size: 0.5-1.5 μm in length
+appear as a uniform, dark-stained colonies
+needle-like crystals with pointed tips
+large, oval-shaped yeast cells
+thin, flat plates with smooth edges
+gram-positive, stain dark blue
+uniform in size and shape
+no visible organelles or structures
+crystalline structures with irregular shapes
+no visible movement or activity
+branching, tree-like structures with thickened tips
+thin, rod-shaped bacteria
+cells are tightly packed together
+clumped, round yeast cells with dark centers
+no significant variation in size
+thick, irregularly shaped yeast cells
+thin, flat plates with irregularly shaped crystals
+needle-like crystals with curved surfaces
+appear as uniform, dark-stained colonies
+randomly arranged, chaotic clusters of filaments
+cell membranes are thin and continuous
+thick, dense networks with numerous nodes
+no visible budding or division
+fine, delicate threads with intricate branching
+lack of defined boundaries
+web-like structures with interconnected nodes
+irregularly shaped crystals with rough surfaces
+thin, rod-shaped yeast cells
+irregularly shaped crystals with smooth, rounded edges
+no visible budding or fragmentation
+thick, flat plates with irregular edges
+thread-like structures with irregular shapes
+fibrous networks with branching patterns
+thin, delicate filaments with nodes
+swelling star phenotype, swelling spores with several germination tubes around
+swelling, round, larger than usual
+isolated spores, some overlap possible
+very short, at most one branching event
+several tubes per spore, tubes grow from a few localized positions on spore surface, often two germination events at 180 degree
+curly germination phenotype, chaotic germination tube growth
+round, smaller than usual, often hidden by tubes
+rather isolated, with a clear tendency to form clusters
+curly, with several branching events, short
+several tubes per spore, tubes distribution and growth is chaotic, tubes tend to create agglomerates around the spore
+mycelium growth, branching structures, no compound effect
+small and round, often hard to detect because covered by branching tubes
+spores exist only as a part of a very large overlapping branching structure
+extremely long, with several branching events, growing rather linearly with possibly some irregular curly patterns
+all tubes branch, overlap and connect, growing very far out of their original spore, creating a branching structure with rather stable density across the whole image
+only spores, no germ tube growth
+round, small, of rather uniform size and shape
+isolated spores, very little overlap
+extremely short to non-existent, no branching events, straight
+zero to one tube per spore
+pearl necklace phenotype, germination tubes look like pebbles
+round, large
+isolated spores, some overlap possible
+tubes look like a line of pebbles along a necklace, short, thicker than usual
+one or two tubes per spore, growing from opposite points on the spore surface, at most one branching event
+swelling spores of different shapes, from round to ovoidal, irregular distribution of germination tubes
+swelling, variable shape and size, some spores are ovoidal
+isolated spores, some overlap possible
+short, can have more than one branching event, can be either straight or curly
+two to several tubes per spore, tubes grow from a few localized points irregularly distributed on the spore surface
+the structure shows a dense network of interwoven filaments
+filaments appear smooth and thread-like at high magnification
+the shape is rounded with varied-sized bulging clusters
+some areas feature a granular texture with bead-like elements
+a clear, gelatinous layer covers the fibrous core
+the arrangement displays a radial pattern emanating from central points
+structure appears as tightly packed crystalline shards
+crystals form angular, geometric patterns
+edges of crystals are sharp and well-defined
+clusters of smaller crystals surround larger central pieces
+some crystals show thin, elongated shapes
+overall arrangement gives a fragmented, mosaic-like appearance
+structure consists of densely intertwined threads
+filaments branch out extensively creating a network
+texture appears fibrous and stringy
+some filaments loop and intertwine with each other
+network displays varying thickness across the sample
+ends of filaments taper off delicately
+spores remain closed without signs of opening
+no emergence of hyphae from the spores
+spore clusters maintain a compact arrangement
+absence of growth medium penetration by any hyphal structures
+spores retain their original size without enlargement
+overall static appearance with minimal or no activity
+cells appear densely packed with minimal expansion
+presence of irregularly shaped cell walls
+clusters of cells show no outward growth
+cellular structures appear static with no dynamic changes
+little to no budding or branching observed in cells
+overall structure maintains a compact, undeveloped form
+crystals form sharp, angular edges
+particles cluster together in dense aggregates
+individual crystals show elongated, needle-like shapes
+structure displays a layered, stratified appearance
+smaller particles are scattered around larger crystal formations
+overall arrangement gives a compact, tightly packed look
+
+
+
+
+
+

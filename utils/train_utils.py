@@ -103,6 +103,7 @@ def get_feature_dataloader(cfg):
 
     else:
         train_labels, test_labels = get_labels(cfg['dataset'])
+        #print("train_labels,",train_labels)###
         train_score_dataset = FeatureDataset(train_features, train_labels)
         test_score_dataset = FeatureDataset(test_features, test_labels)
 
@@ -176,7 +177,7 @@ def calculate_worst_group_acc(predictions, labels, groups):
     return worst_group_acc
 
 
-def train_model(cfg, epochs, model, train_loader, test_loader, regularizer=None, configs=None):
+def train_model(cfg, epochs, model, train_loader, test_loader, regularizer=None, configs=None,use_voting=cfg['use_voting']):
 
     model.cuda()
     optimizer = torch.optim.Adam(model.parameters(), lr=cfg['lr'])
@@ -220,6 +221,7 @@ def train_model(cfg, epochs, model, train_loader, test_loader, regularizer=None,
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
+        #print("after training")
 
         # test:
         with torch.no_grad():
@@ -230,26 +232,58 @@ def train_model(cfg, epochs, model, train_loader, test_loader, regularizer=None,
                 s, t = batch[0], batch[1]
                 s = s.float().cuda()
                 output = model(s).cpu()
+                #output = model(s)
                 pred = torch.argmax(output, dim=-1)
                 if len(batch) == 3:
                     group_array.append(batch[2])
                 predictions.append(pred)
                 labels.append(t)
+            
 
             predictions = torch.cat(predictions)
             if len(group_array) > 0:
                 group_array = torch.cat(group_array)
 
         labels = torch.cat(labels)
+        #print("torch.cat(labels) labels:", labels)
 
-        acc = (torch.sum(predictions == labels) / len(predictions) * 100)
+        if use_voting:
+            '''
+            print("voting")
+            # Voting mechanism for every 7 crops
+            voted_predictions = []
+            print("len(predictions)",len(predictions))
+            for i in range(0, len(predictions), 7):
+                # Majority voting
+                votes = predictions[i:i+7]
+                vote_counts = votes.bincount(minlength=output.size(1))
+                voted_predictions.append(vote_counts.argmax())
+
+            voted_predictions = torch.cat(voted_predictions)
+                # Calculate accuracy with voted predictions
+            acc = (torch.sum(voted_predictions == labels[:len(voted_predictions)]) / len(voted_predictions) * 100)
+        '''
+            patches_per_image = 7
+            num_images = len(predictions) // patches_per_image
+            #print(num_images)
+            predictions = predictions.view(num_images, patches_per_image)    
+            # torch.mode: Calculate the mode of each row
+            voted_predictions = torch.mode(predictions, dim=1).values
+            #print("voted_predictions",len(voted_predictions))
+            correct_labels = labels[patches_per_image-1::patches_per_image][:num_images]
+            #print("len(correct_labels) ",len(correct_labels) )
+            #voted_predictions = voted_predictions.to(labels.device) 
+            acc = (torch.sum(voted_predictions == correct_labels) / len(correct_labels) * 100)
+        else:
+            acc = (torch.sum(predictions == labels) / len(predictions) * 100)
 
         if acc > best_acc:
             best_acc = acc
             best_model = copy.deepcopy(model)
 
         if epoch % 10 == 0:
-            print(f"Epoch [{epoch}], Best accuracy:", best_acc.item(), "Last accuracy:", acc.item())
+            print(f"Epoch [{epoch}], Best accuracy: {best_acc}, Last accuracy: {acc}")
+            #print(f"Epoch [{epoch}], Best accuracy:", best_acc.item(), "Last accuracy:", acc.item())
 
             sys.stdout.flush()
 
