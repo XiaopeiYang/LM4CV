@@ -8,20 +8,12 @@ mahalanobis: True
 division_power: 2
 linear_epochs: 132
 reinit: true # True/False
-<<<<<<< HEAD
-num_attributes: 64 # [16, 32, 64, 128, 256, 512]
-=======
-num_attributes: 32 # [16, 32, 64, 128, 256, 512]
->>>>>>> b9ae034fba49df5d0b769772d2a37d96e4227954
+num_attributes: 96 # [16, 32, 64, 128, 256, 512]
 seed: 0
 
 # optimization parameters
 lr: 0.001
-<<<<<<< HEAD
 batch_size: 28
-=======
-batch_size: 4
->>>>>>> b9ae034fba49df5d0b769772d2a37d96e4227954
 epochs: 1050
 
 # model structure
@@ -30,10 +22,6 @@ score_model: [linear]
 
 json_file: "/export/home/ra79nod/proj/LM4CV/data/fungi_small/split_zhou_FungiSmall.json"
 ROOT: "/export/group/datasets/microbiology/images_png"
-<<<<<<< HEAD
-
-use_voting: True
+use_voting: False
 
 
-=======
->>>>>>> b9ae034fba49df5d0b769772d2a37d96e4227954

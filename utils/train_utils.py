@@ -283,11 +283,7 @@ def train_model(cfg, epochs, model, train_loader, test_loader, regularizer=None,
 
         if epoch % 10 == 0:
             print(f"Epoch [{epoch}], Best accuracy: {best_acc}, Last accuracy: {acc}")
-<<<<<<< HEAD
             #print(f"Epoch [{epoch}], Best accuracy:", best_acc.item(), "Last accuracy:", acc.item())
-=======
-            print(f"Epoch [{epoch}], Best accuracy:", best_acc.item(), "Last accuracy:", acc.item())
->>>>>>> b9ae034fba49df5d0b769772d2a37d96e4227954
 
             sys.stdout.flush()
 

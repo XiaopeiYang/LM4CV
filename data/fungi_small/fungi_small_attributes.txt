@@ -92,7 +92,6 @@ swelling spores of different shapes, from round to ovoidal, irregular distributi
 swelling, variable shape and size, some spores are ovoidal
 isolated spores, some overlap possible
 short, can have more than one branching event, can be either straight or curly
-<<<<<<< HEAD
 two to several tubes per spore, tubes grow from a few localized points irregularly distributed on the spore surface
 the structure shows a dense network of interwoven filaments
 filaments appear smooth and thread-like at high magnification
@@ -130,12 +129,3 @@ individual crystals show elongated, needle-like shapes
 structure displays a layered, stratified appearance
 smaller particles are scattered around larger crystal formations
 overall arrangement gives a compact, tightly packed look
-
-
-
-
-
-
-=======
-two to several tubes per spore, tubes grow from a few localized points irregularly distributed on the spore surface
->>>>>>> b9ae034fba49df5d0b769772d2a37d96e4227954
