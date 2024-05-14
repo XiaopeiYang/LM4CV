@@ -8,7 +8,7 @@ import json
 import random
  
 
-IMP_SAMP = True
+IMP_SAMP_fix = True
 
 
 n_crops_per_image = 7
@@ -32,7 +32,6 @@ def important_crops_per_image(image, n_crops,imp_samp_params):
     return crop_list
 
 
-<<<<<<< HEAD
 def important_random_size_crops_per_image(image, n_crops, imp_samp_params):
     crop_list = []
     for i in range(n_crops):
@@ -47,8 +46,6 @@ def important_random_size_crops_per_image(image, n_crops, imp_samp_params):
         crop_list.append(crop)
     return crop_list
 
-=======
->>>>>>> b9ae034fba49df5d0b769772d2a37d96e4227954
 class FungiSmall(Dataset):
     """dataset for fungi"""
 
@@ -68,14 +65,10 @@ class FungiSmall(Dataset):
         """Generates all important patches and their labels."""
         if self.use_patches:
             for img_path, img_label in zip(self.images_path, self.images_class):
-<<<<<<< HEAD
-                if IMP_SAMP:
+                if IMP_SAMP_fix:
                     patches = important_crops_per_image(img_path, n_crops_per_image, imp_samp_params)
                 else:
                     patches = important_random_size_crops_per_image(img_path, n_crops_per_image, imp_samp_params)
-=======
-                patches = important_crops_per_image(img_path, n_crops_per_image, imp_samp_params)
->>>>>>> b9ae034fba49df5d0b769772d2a37d96e4227954
                 for patch in patches:
                     self.patches.append(patch)
                     self.labels.append(img_label)  # Assuming the same label for all patches from the same image
@@ -139,11 +132,7 @@ def read_split_data(json_file: str, root: str):
 
     # Process training data
     for item in data['train']:
-<<<<<<< HEAD
-        full_path = os.path.join(root, item[0])  # 
-=======
-        full_path = os.path.join(root, item[0])  # 使用os.path.join结合根目录和相对路径
->>>>>>> b9ae034fba49df5d0b769772d2a37d96e4227954
+        full_path = os.path.join(root, item[0]) 
         train_images_path.append(full_path)
         train_images_label.append(item[1])
 
